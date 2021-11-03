@@ -8,16 +8,19 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    var questions: [Question] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
     }
 
-    // 1. Передать сюда массив с ответами
+    // 1. Передать сюда массив с ответами (+)
     // 2. Определить наиболее часто встречающийся тип животного
     // 3. Отобразить результаты в соотвствии с этим животным
-    // 4. Избавиться от кнопки возврата назад на экране результатов
+    // 4. Избавиться от кнопки возврата назад на экране результатов (+)
     
 }
