@@ -9,21 +9,24 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    var answers: [Answer] = []
-
+    // MARK: - IB Outlets
     @IBOutlet var topAnswerTitleLabel: UILabel!
     @IBOutlet var topAnswerSubtitleLabel: UILabel!
     
+    // MARK: - Public Properties
+    var answers: [Answer] = []
+    
+    // MARK: - Ovveride Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.setHidesBackButton(true, animated: true)
         
-        print(getMostCommonAnswer(answers: answers))
-            
+        printResult(animalType: getMostCommonAnswer(answers: answers))
+        
     }
-
     
+    // MARK: - Private Methods
     // Определяем наиболее часто встречающийся тип животного
     private func getMostCommonAnswer(answers: [Answer]) -> AnimalType {
         
@@ -41,7 +44,7 @@ class ResultViewController: UIViewController {
         }
         
         let highestValue = answerDictionary.values.max()
-
+        
         for (answerType, _) in answerDictionary {
             if answerDictionary[answerType] == highestValue {
                 topAnswersType = answerType
@@ -51,6 +54,24 @@ class ResultViewController: UIViewController {
         return topAnswersType
     }
     
-    // 3. Отобразить результаты в соотвствии с этим животным
+    // Отображаем результаты в соотвствии с этим животным
+    private func printResult(animalType: AnimalType) {
+        
+        switch animalType {
+        case .dog:
+            topAnswerTitleLabel.text = "Собака - \(animalType.rawValue)"
+            topAnswerSubtitleLabel.text = animalType.definition
+        case .cat:
+            topAnswerTitleLabel.text = "Кошка - \(animalType.rawValue)"
+            topAnswerSubtitleLabel.text = animalType.definition
+        case .rabbit:
+            topAnswerTitleLabel.text = "Заяц - \(animalType.rawValue)"
+            topAnswerSubtitleLabel.text = animalType.definition
+        case .turtle:
+            topAnswerTitleLabel.text = "Черепаха - \(animalType.rawValue)"
+            topAnswerSubtitleLabel.text = animalType.definition
+        }
+        
+    }
     
 }
