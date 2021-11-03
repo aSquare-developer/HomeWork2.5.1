@@ -194,7 +194,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gl-mp-XOH">
                                         <rect key="frame" x="0.0" y="188" width="382" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
                                             <action selector="multipleAnswerButtonPressed" destination="w5e-35-W6k" eventType="touchUpInside" id="9Lw-he-8hn"/>
                                         </connections>
